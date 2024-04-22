@@ -1,6 +1,6 @@
 import { Firebot } from "@crowbartools/firebot-custom-scripts-types";
 const { mouse, Point, Button } = require('@nut-tree/nut-js');
-
+let logger = runRequest.modules.logger;
 interface Params {
   message: string;
 }
@@ -81,5 +81,7 @@ exports.main = main;
 exports.run = run;
 run();
 
-
+logger.debug("Outputs a DEBUG tagged message for the dev tools console!");
+logger.info("Outputs an INFO tagged message for the dev tools console!");
+logger.error("Outputs an ERROR tagged message for the dev tools console!");
 export default script;
